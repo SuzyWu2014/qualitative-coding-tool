@@ -1,7 +1,6 @@
 from django.db import models
 import uuid
 
-# Create your models here.
 
 class Tag(models.Model):
     """Tag object"""
@@ -52,11 +51,7 @@ class Tag(models.Model):
 
 class Explanation(models.Model):
     """Explanation object"""
-    def __init__(self, arg):
-        super(Explanation, self).__init__()
-        self.arg = arg
-
-    exp_id = models.CharField(max_length=5, primary_key=True)
+    explanation_id = models.CharField(max_length=5, primary_key=True)
     source_link = models.URLField()
     evernote_link = models.URLField()
     Tags = models.ManyToManyField(Tag, through='Membership', through_fields=('tag', 'explanation'))
