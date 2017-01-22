@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def add_code(request):
+    return render(request, "codingtool/add_code.html", {})
