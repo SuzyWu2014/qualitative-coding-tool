@@ -49,7 +49,7 @@ class Code(models.Model):
     explanation = models.ForeignKey(Explanation)
     position = models.IntegerField()
     goal = models.ForeignKey(Goal)
-    roles = models.ManyToManyField(Role)
+    role = models.ForeignKey(Role)
     notations = models.ManyToManyField(Notation)
     is_partial = models.BooleanField(default=False)
     is_emphasized = models.BooleanField(default=False)
@@ -58,6 +58,3 @@ class Code(models.Model):
 
     def notationlist(self):
         return list(self.notations.all())
-
-    def rolelist(self):
-        return list(self.roles.all())

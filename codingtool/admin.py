@@ -35,9 +35,11 @@ class CodeAdmin(admin.ModelAdmin):
     list_display = ('explanation',
                     'position',
                     'goal',
+                    'role',
                     'is_partial',
                     'is_emphasized',
                     'has_many'
                     )
-    list_filter = ('roles', 'notations')
-    filter_horizontal = ('roles', 'notations')
+    list_filter = ['notations']
+    filter_horizontal = ['notations']
+    show_full_result_count = ['explanation']
