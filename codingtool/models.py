@@ -49,15 +49,15 @@ class Code(models.Model):
     explanation = models.ForeignKey(Explanation)
     position = models.IntegerField()
     goal = models.ForeignKey(Goal)
-    role = models.ForeignKey(Role)
-    notations = models.ManyToManyField(Notation,
-        through="Membership", through_fields=('code', 'notation'))
+    roles = models.ManyToManyField(Role)
+    notations = models.ManyToManyField(Notation)
     is_partial = models.BooleanField(default=False)
     is_emphasized = models.BooleanField(default=False)
     has_many = models.BooleanField(default=False)
     description = models.CharField(max_length=256, blank=True)
 
+    def notationlist(self):
+        return list(self.notations.all())
 
-class Membership(models.Model):
-    code = models.ForeignKey(Code)
-    notation = models.ForeignKey(Notation)
+    def rolelist(self):
+        return list(self.roles.all())
