@@ -1,2 +1,9 @@
+# virtual env
 env/*
+
+*/__pycache__/*
+*/migrations/*
+
+__init__.py
 *.pyc
+mysql.cnf
