@@ -23,7 +23,10 @@ class GoalAdmin(admin.ModelAdmin):
 @admin.register(Explanation)
 class GoalAdmin(admin.ModelAdmin):
     empty_value_display = '-- empty --'
-    list_display = ('explanation', 'source_link', 'evernote_link', 'description')
+    list_display = ('explanation',
+                    'source_link',
+                    'evernote_link',
+                    'description')
 
 
 @admin.register(Code)
