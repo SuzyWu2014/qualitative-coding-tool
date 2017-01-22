@@ -1,3 +1,5 @@
+-- Deprecated --
+
 USE DB_CODES;
 
 INSERT INTO goals

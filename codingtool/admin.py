@@ -1,8 +1,40 @@
 from django.contrib import admin
 from .models import Goal, Role, Explanation, Notation, Code
 
-admin.site.register(Goal)
-admin.site.register(Role)
-admin.site.register(Notation)
-admin.site.register(Explanation)
-admin.site.register(Code)
+
+@admin.register(Goal)
+class GoalAdmin(admin.ModelAdmin):
+    empty_value_display = '-- empty --'
+    list_display = ('goal', 'description')
+
+
+@admin.register(Role)
+class GoalAdmin(admin.ModelAdmin):
+    empty_value_display = '-- empty --'
+    list_display = ('role', 'description')
+
+
+@admin.register(Notation)
+class GoalAdmin(admin.ModelAdmin):
+    empty_value_display = '-- empty --'
+    list_display = ('notation', 'description')
+
+
+@admin.register(Explanation)
+class GoalAdmin(admin.ModelAdmin):
+    empty_value_display = '-- empty --'
+    list_display = ('explanation', 'source_link', 'evernote_link', 'description')
+
+
+@admin.register(Code)
+class CodeAdmin(admin.ModelAdmin):
+    empty_value_display = '-- empty --'
+    list_display = ('explanation',
+                    'position',
+                    'goal',
+                    'is_partial',
+                    'is_emphasized',
+                    'has_many'
+                    )
+    list_filter = ('roles', 'notations')
+    filter_horizontal = ('roles', 'notations')
