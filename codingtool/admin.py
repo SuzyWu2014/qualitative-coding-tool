@@ -1,22 +1,23 @@
 from django.contrib import admin
 from .models import Goal, Role, Explanation, Notation, Code
 
+
 class CodeInline(admin.TabularInline):
-     model = Code
+    model = Code
 
 
 @admin.register(Goal)
 class GoalAdmin(admin.ModelAdmin):
     empty_value_display = '-- empty --'
     list_display = ('goal', 'description')
-    inlines = [CodeInline,]
+    inlines = [CodeInline, ]
 
 
 @admin.register(Role)
 class RoleAdmin(admin.ModelAdmin):
     empty_value_display = '-- empty --'
     list_display = ('role', 'description')
-    inlines = [CodeInline,]
+    inlines = [CodeInline, ]
 
 
 @admin.register(Notation)
