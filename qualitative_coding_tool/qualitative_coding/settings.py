@@ -90,7 +90,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'OPTIONS': {
-            'read_default_file': '/Users/shujinwu/gitHub/qualitative-coding-tool/qualitative_coding/mysql.cnf',
+            'read_default_file': '/Users/shujinwu/gitHub/qualitative-coding-tool/qualitative_coding_tool/qualitative_coding/mysql.cnf',
         },
     }
 }
